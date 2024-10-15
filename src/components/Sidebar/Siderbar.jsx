@@ -12,7 +12,7 @@ const Siderbar = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <nav className='min-h-screen pt-3 pb-6 px-3 inline-flex flex-col justify-between bg-gray-100'>
+    <nav className='min-h-screen pt-4 pb-6 px-3 inline-flex flex-col justify-between bg-gray-100 transition-all duration-300 ease'>
       <div
         className={`flex flex-col ${
           collapsed ? 'items-start' : 'items-center'

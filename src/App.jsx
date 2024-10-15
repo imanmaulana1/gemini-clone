@@ -1,10 +1,11 @@
 import React from 'react';
-import Siderbar from './components/Sidebar/Siderbar';
+import { Main, Siderbar } from './components';
 
 const App = () => {
   return (
     <>
       <Siderbar />
+      <Main />
     </>
   );
 };
