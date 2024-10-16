@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   AlignJustify,
   CircleHelp,
@@ -7,9 +7,11 @@ import {
   Plus,
   Settings,
 } from 'lucide-react';
+import { Context } from '../../context/Context';
 
 const Siderbar = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const { onSent, prevChats, setRecentChat } = useContext(Context);
 
   return (
     <nav className='min-h-screen pt-4 pb-6 px-3 inline-flex flex-col justify-between bg-gray-100 transition-all duration-300 ease'>
@@ -37,13 +39,17 @@ const Siderbar = () => {
         {collapsed && (
           <div className='flex flex-col'>
             <p className='mt-6 mb-2 ps-3  text-gray-700'>Recent</p>
-            <button
-              className='flex items-start gap-3 p-3 pe-5 bg-gray-100 hover:bg-gray-200 rounded-[50px] text-neutral-500 hover:text-neutral-700 cursor-pointer'
-              aria-label='Open Recent Chat'
-            >
-              <MessageSquare className='w-5' />
-              <p>Creating a News Portal Using ...</p>
-            </button>
+            {prevChats?.map((chat, index) => (
+              <button
+                className='flex items-start gap-3 p-3 pe-5 bg-gray-100 hover:bg-gray-200 rounded-[50px] text-neutral-500 hover:text-neutral-700 cursor-pointer'
+                aria-label='Open Recent Chat'
+                key={index}
+                onClick={() => onSent(chat)}
+              >
+                <MessageSquare className='w-5' />
+                <p>{chat.length > 20 ? `${chat.slice(0, 20)}...` : chat}</p>
+              </button>
+            ))}
           </div>
         )}
       </div>
