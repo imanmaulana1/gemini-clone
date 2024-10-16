@@ -44,6 +44,14 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: 'Google Sans';
+  src: url('./assets/fonts/ProductSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 * {
   margin: 0;
   padding: 0;
