@@ -57,11 +57,7 @@ const Main = () => {
           </div>
         </form>
         <p className='text-sm text-neutral-500 text-center font-light py-4'>
-          Gemini may display inaccurate info, including about people, so
-          double-check its responses.{' '}
-          <a href='#' className='underline'>
-            Your privacy & Gemini Apps
-          </a>
+          Gemini can make mistakes, so double-check it
         </p>
       </footer>
     </main>
