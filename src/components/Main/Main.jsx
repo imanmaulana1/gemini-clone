@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import { icons } from '../../assets/icons';
-import { Mic } from 'lucide-react';
+import { AlignJustify, Mic, Plus } from 'lucide-react';
 import { Context } from '../../context/Context';
 import './Main.css';
+import Siderbar from '../Sidebar/Siderbar';
 
 const Main = () => {
   const {
@@ -13,17 +14,38 @@ const Main = () => {
     input,
     setInput,
     loading,
+    newChat,
+    setShowSidebar,
   } = useContext(Context);
 
   return (
     <main className='min-h-screen flex-1 relative'>
       <header className='flex items-center justify-between text-xl p-5 text-neutral-700'>
-        <h1 className='font-medium'>Gemini</h1>
-        <img
-          src={icons.user_icon}
-          alt='User Icon'
-          className='w-10 rounded-full'
-        />
+        <div className='flex items-center gap-3'>
+          <button
+            className='block lg:hidden cursor-pointer'
+            aria-label='Toggle Menu'
+            onClick={() => setShowSidebar((prevState) => !prevState)}
+          >
+            <AlignJustify className='w-6' />
+          </button>
+
+          <h1 className='font-medium'>Gemini</h1>
+        </div>
+        <div className='flex items-center gap-3'>
+          <button
+            className='inline-flex lg:hidden w-10 p-0 rounded-full items-center justify-center gap-3 h-10  bg-gray-200 hover:bg-gray-300 text-sm text-neutral-600 hover:text-neutral-700 cursor-pointer transition-colors duration-300 ease'
+            aria-label='Start a New Chat'
+            onClick={() => newChat()}
+          >
+            <Plus className='w-5' />
+          </button>
+          <img
+            src={icons.user_icon}
+            alt='User Icon'
+            className='w-10 rounded-full'
+          />
+        </div>
       </header>
       <div className='max-w-[900px] mx-auto'>
         {!showResult ? (
@@ -31,7 +53,7 @@ const Main = () => {
             <section className='my-60 text-3xl sm:text-[40px] lg:text-[56px] lg:leading-tight text-center text-neutral-600 font-medium p-5'>
               <p>
                 <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#6b45f2] via-[#9a3bd4] to-[#dc5267]'>
-                  Hello, Dev.
+                  Hello, Coder.
                 </span>
               </p>
               <p>How can I help?</p>
@@ -51,9 +73,9 @@ const Main = () => {
               />
               {loading ? (
                 <div className='w-full flex flex-col gap-3'>
-                  <hr className='h-5 rounded-sm border-0 bg-[800px_50px] bg-neutral-200 bg-gradient-to-r from-[#9ed7ff] via-[#ffffff] to-[#9ed7ff] loading' />
-                  <hr className='h-5 rounded-sm border-0 bg-[800px_50px] bg-neutral-200 bg-gradient-to-r from-[#9ed7ff] via-[#ffffff] to-[#9ed7ff] loading' />
-                  <hr className='h-5 rounded-sm border-0 bg-[800px_50px] bg-neutral-200 bg-gradient-to-r from-[#9ed7ff] via-[#ffffff] to-[#9ed7ff] loading' />
+                  <hr className='h-5 rounded-sm border-0 bg-[800px_50px] bg-neutral-200 bg-gradient-to-r from-[#9ed7ff] via-[#ffffff] to-[#9ed7ff] animate-loading' />
+                  <hr className='h-5 rounded-sm border-0 bg-[800px_50px] bg-neutral-200 bg-gradient-to-r from-[#9ed7ff] via-[#ffffff] to-[#9ed7ff] animate-loading' />
+                  <hr className='h-5 rounded-sm border-0 bg-[800px_50px] bg-neutral-200 bg-gradient-to-r from-[#9ed7ff] via-[#ffffff] to-[#9ed7ff] animate-loading' />
                 </div>
               ) : (
                 <p
@@ -71,17 +93,17 @@ const Main = () => {
             e.preventDefault();
             onSent(input);
           }}
-          className='flex items-center justify-between gap-5 bg-input py-3 px-5 rounded-[50px]'
+          className='flex items-center justify-between gap-5 bg-input py-3 px-5 rounded-[50px] '
         >
           <input
             type='text'
             placeholder='Enter a prompt here'
-            className='flex-1 bg-transparent border-0 outline-0 p-2 text-md text-gray-800'
+            className='w-48 lg:flex-1 bg-transparent border-0 outline-0 p-2 text-md text-gray-800'
             aria-label='Prompt Input'
             onChange={(e) => setInput(e.target.value)}
             value={input}
           />
-          <div className='flex items-center gap-1'>
+          <div className='flex items-center gap-0 lg:gap-1 '>
             <button
               className='cursor-pointer bg-gray-100 hover:bg-gray-200 rounded-full p-2'
               aria-label='Gallery'
@@ -89,14 +111,14 @@ const Main = () => {
               <img
                 src={icons.gallery_icon}
                 alt='Gallery Icon'
-                className='w-6'
+                className='w-5 lg:w-6'
               />
             </button>
             <button
-              className='cursor-pointer bg-gray-100 hover:bg-gray-200 rounded-full p-2'
+              className='cursor-pointer bg-gray-100 hover:bg-gray-200 rounded-full p-1 lg:p-2'
               aria-label='Microphone'
             >
-              <Mic color='#2f3137' />
+              <Mic color='#2f3137' className='w-5 lg:w-6' />
             </button>
           </div>
         </form>

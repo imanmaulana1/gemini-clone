@@ -10,6 +10,7 @@ const ContextProvider = ({ children }) => {
   const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
   const [resultData, setResultData] = useState('');
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const delayParagraph = (index, nextWord) => {
     setTimeout(() => {
@@ -70,7 +71,9 @@ const ContextProvider = ({ children }) => {
     input,
     setInput,
     onSent,
-    newChat
+    newChat,
+    showSidebar,
+    setShowSidebar
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

@@ -1,16 +1,3 @@
 .result-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
-@keyframes loading {
-  0% {
-    background-position: -800px 0;
-  }
-  100% {
-    background-position: 800px 0;
-  }
-}
-
-.loading {
-  animation: loading 2s linear infinite;
-}
