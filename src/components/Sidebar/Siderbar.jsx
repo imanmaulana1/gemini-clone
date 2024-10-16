@@ -11,7 +11,7 @@ import { Context } from '../../context/Context';
 
 const Siderbar = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const { onSent, prevChats, setRecentChat } = useContext(Context);
+  const { onSent, prevChats, setRecentChat, newChat } = useContext(Context);
 
   return (
     <nav className='min-h-screen pt-4 pb-6 px-3 inline-flex flex-col justify-between bg-gray-100 transition-all duration-300 ease'>
@@ -32,6 +32,7 @@ const Siderbar = () => {
             collapsed ? 'w-auto px-4 rounded-[50px]' : 'w-10 px-0 rounded-full'
           } mt-14 inline-flex items-center justify-center gap-3 h-10  bg-gray-200 hover:bg-gray-300 text-sm text-neutral-600 hover:text-neutral-700 cursor-pointer transition-colors duration-300 ease`}
           aria-label='Start a New Chat'
+          onClick={() => newChat()}
         >
           <Plus className='w-5' />
           {collapsed && <p>New Chat</p>}
@@ -44,7 +45,10 @@ const Siderbar = () => {
                 className='flex items-start gap-3 p-3 pe-5 bg-gray-100 hover:bg-gray-200 rounded-[50px] text-neutral-500 hover:text-neutral-700 cursor-pointer'
                 aria-label='Open Recent Chat'
                 key={index}
-                onClick={() => onSent(chat)}
+                onClick={() => {
+                  onSent(chat);
+                  setRecentChat(chat);
+                }}
               >
                 <MessageSquare className='w-5' />
                 <p>{chat.length > 20 ? `${chat.slice(0, 20)}...` : chat}</p>

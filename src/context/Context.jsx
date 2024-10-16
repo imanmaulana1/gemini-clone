@@ -14,8 +14,13 @@ const ContextProvider = ({ children }) => {
   const delayParagraph = (index, nextWord) => {
     setTimeout(() => {
       setResultData((prevResultData) => prevResultData + nextWord);
-    }, 40 * index);
+    }, 45 * index);
   };
+
+  const newChat = () => {
+    setLoading(false);
+    setShowResult(false);
+  }
 
   const formatMarkdown = (text) => {
     return text
@@ -34,7 +39,6 @@ const ContextProvider = ({ children }) => {
 
     try {
       const response = await run(prompt);
-      console.log(response);
 
       const formattedResponse = formatMarkdown(response);
 
@@ -66,6 +70,7 @@ const ContextProvider = ({ children }) => {
     input,
     setInput,
     onSent,
+    newChat
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
