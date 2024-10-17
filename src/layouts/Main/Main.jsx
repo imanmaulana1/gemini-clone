@@ -6,7 +6,7 @@ import {
 
 const Main = () => {
   return (
-    <main className='min-h-screen flex-1 relative'>
+    <main className='min-h-screen flex-1 relative bg-white dark:bg-darkmode transition-all duration-300 ease'>
       <HeaderMainContent />
       <BodyMainContent />
       <FooterMainContent />

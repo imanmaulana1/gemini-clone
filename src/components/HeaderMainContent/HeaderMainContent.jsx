@@ -1,7 +1,12 @@
 import { useContext } from 'react';
 import { Context } from '../../context/Context';
 
-import { ButtonHamburger, ButtonNewChat, AvaIcon } from '../../components';
+import {
+  ButtonHamburger,
+  ButtonNewChat,
+  AvaIcon,
+  DarkModeToggle,
+} from '../../components';
 
 import { icons } from '../../assets/icons';
 
@@ -15,9 +20,10 @@ const HeaderMainContent = () => {
           classes={'lg:hidden'}
         />
 
-        <h1 className='font-medium'>Gemini</h1>
+        <h1 className='font-medium text-neutral-600 dark:text-neutral-200 transition-colors duration-300 ease'>Gemini</h1>
       </div>
       <div className='flex items-center gap-3'>
+        <DarkModeToggle />
         <ButtonNewChat
           collapsed={true}
           onClick={() => newChat()}

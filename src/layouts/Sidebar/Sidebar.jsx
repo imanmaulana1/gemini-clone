@@ -12,7 +12,7 @@ const Sidebar = () => {
   const { newChat } = useContext(Context);
   return (
     <nav
-      className={`hidden lg:inline-flex flex-col justify-between min-h-screen pt-4 pb-6 px-3  bg-gray-100 transition-all duration-300 ease ${
+      className={`hidden lg:inline-flex flex-col justify-between min-h-screen pt-4 pb-6 px-3  bg-gray-100 dark:bg-darkmode-secondary transition-all duration-300 ease ${
         collapsed ? 'w-16' : 'w-64'
       }`}
     >
@@ -23,7 +23,9 @@ const Sidebar = () => {
       >
         <ButtonHamburger
           onClick={() => setCollapsed((prevState) => !prevState)}
-          classes={'bg-gray-100 hover:bg-gray-200 rounded-[50px] p-3'}
+          classes={
+            'bg-gray-100 dark:bg-darkmode-secondary hover:bg-gray-200 dark:hover:bg-darkmode-hover text-neutral-600 dark:text-white rounded-[50px] p-3 transition-all duration-300 ease'
+          }
         />
 
         <ButtonNewChat
