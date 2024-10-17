@@ -5,7 +5,11 @@ import { ChatWindow, Greeting } from '../../components';
 const BodyMainContent = () => {
   const { showResult } = useContext(Context);
   return (
-    <div className='max-w-[900px] mx-auto'>
+    <div
+      className={`${
+        !showResult ? 'flex items-center justify-center' : ''
+      } max-w-[900px] h-[75vh] mx-auto`}
+    >
       {!showResult ? <Greeting /> : <ChatWindow />}
     </div>
   );
