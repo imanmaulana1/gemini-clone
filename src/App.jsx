@@ -1,14 +1,8 @@
 import React from 'react';
-import { Main, SidebarMobile, Siderbar } from './components';
+import Homepage from './pages/Homepage';
 
 const App = () => {
-  return (
-    <>
-      <Siderbar />
-      <SidebarMobile />
-      <Main />
-    </>
-  );
+  return <Homepage />;
 };
 
 export default App;
