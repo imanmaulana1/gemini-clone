@@ -2,8 +2,7 @@ import { useContext } from 'react';
 import { icons } from '../../assets/icons';
 import { AlignJustify, Mic, Plus } from 'lucide-react';
 import { Context } from '../../context/Context';
-import './Main.css';
-import Siderbar from '../Sidebar/Siderbar';
+
 
 const Main = () => {
   const {
@@ -20,8 +19,8 @@ const Main = () => {
 
   return (
     <main className='min-h-screen flex-1 relative'>
-      <header className='flex items-center justify-between text-xl p-5 text-neutral-700'>
-        <div className='flex items-center gap-3'>
+      <header className='flex items-center justify-between text-xl py-5 px-3 text-neutral-700'>
+        <div className='flex items-center gap-3 relative z-20'>
           <button
             className='block lg:hidden cursor-pointer'
             aria-label='Toggle Menu'
@@ -60,7 +59,7 @@ const Main = () => {
             </section>
           </>
         ) : (
-          <div className='px-[5%] max-h-[75vh] overflow-y-scroll result-scrollbar'>
+          <div className='px-[5%] max-h-[75vh] overflow-y-scroll scrollbar'>
             <div className='flex items-center gap-5 my-10'>
               <img src={icons.user_icon} alt='' className='w-10 rounded-full' />
               <p className='font-light'>{recentChat}</p>

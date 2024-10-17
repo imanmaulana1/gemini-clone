@@ -73,3 +73,7 @@
     opacity: 1;
   }
 }
+
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Main, Siderbar } from './components';
+import { Main, SidebarMobile, Siderbar } from './components';
 
 const App = () => {
   return (
     <>
       <Siderbar />
+      <SidebarMobile />
       <Main />
     </>
   );
