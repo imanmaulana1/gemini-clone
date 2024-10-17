@@ -7,13 +7,10 @@ const DarkModeToggle = () => {
 
   return (
     <div className='flex items-center justify-center'>
-      <span className='text-sm font-medium text-gray-500 dark:text-gray-300 mr-2'>
-        Light
-      </span>
       <div
         className={`relative inline-flex items-center cursor-pointer transition-colors ${
           darkMode ? 'bg-blue-100' : 'bg-neutral-200'
-        } rounded-full w-16 h-8 p-1 px-3`}
+        } rounded-full w-16 h-7 p-1 px-3`}
         onClick={() => setDarkMode(!darkMode)}
       >
         <Moon
@@ -29,9 +26,6 @@ const DarkModeToggle = () => {
           }`}
         />
       </div>
-      <span className='text-sm font-medium text-gray-500 dark:text-gray-300 ml-2'>
-        Dark
-      </span>
     </div>
   );
 };

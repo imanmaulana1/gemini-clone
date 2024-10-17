@@ -24,7 +24,7 @@ const Sidebar = () => {
         <ButtonHamburger
           onClick={() => setCollapsed((prevState) => !prevState)}
           classes={
-            'bg-gray-100 dark:bg-darkmode-secondary hover:bg-gray-200 dark:hover:bg-darkmode-hover text-neutral-600 dark:text-white rounded-[50px] p-3 transition-all duration-300 ease'
+            'bg-gray-100 dark:bg-darkmode-secondary hover:bg-gray-200 dark:hover:bg-darkmode-hover rounded-[50px] p-3 transition-all duration-300 ease'
           }
         />
 

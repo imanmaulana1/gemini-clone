@@ -2,7 +2,7 @@ import { AlignJustify } from 'lucide-react';
 const ButtonHamburger = ({ onClick, classes }) => {
   return (
     <button
-      className={`block cursor-pointer ${classes}`}
+      className={`block text-neutral-600 dark:text-white cursor-pointer ${classes}`}
       aria-label='Toggle Menu'
       onClick={onClick}
     >

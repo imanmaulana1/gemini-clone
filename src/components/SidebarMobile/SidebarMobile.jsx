@@ -6,7 +6,7 @@ const SidebarMobile = () => {
   const { showSidebar } = useContext(Context);
   return (
     <nav
-      className={`fixed flex flex-col justify-between lg:hidden top-0 bottom-0 w-[80%] pb-8 bg-gray-100 z-10 transition-all duration-300 ease ${
+      className={`fixed flex flex-col justify-between lg:hidden top-0 bottom-0 w-[80%] pb-8 bg-gray-100 dark:bg-darkmode-secondary z-10 transition-all duration-300 ease ${
         showSidebar ? 'left-0' : '-left-[80%]'
       }`}
     >
