@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
+    "@tailwindcss/typography": "^0.5.15",
     "lucide-react": "^0.452.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

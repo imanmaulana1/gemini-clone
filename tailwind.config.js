@@ -9,7 +9,8 @@ export default {
         darkmode: '#131314',
         'darkmode-secondary': '#1e1f20',
         'darkmode-tertiary': '#1a1a1c',
-        'darkmode-hover': '#2a2a2a'
+        'darkmode-hover': '#2a2a2a',
+        'darkblue': '#212538'
       },
       animation: {
         fadeIn: 'fadeIn 1.5s ease-in-out',
@@ -28,7 +29,7 @@ export default {
         spin: {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
-        }
+        },
       },
     },
   },

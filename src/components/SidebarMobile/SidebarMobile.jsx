@@ -10,7 +10,7 @@ const SidebarMobile = () => {
         showSidebar ? 'left-0' : '-left-[80%]'
       }`}
     >
-      <div className='flex flex-col overflow-y-scroll h-[30vh] md:h-[60vh] px-2 mt-20 scrollbar'>
+      <div className='flex flex-col overflow-y-scroll h-[70vh] md:h-[80vh] px-2 mt-20 scrollbar'>
         <ChatHistory />
       </div>
       <div className='flex flex-col items-start px-2'>
