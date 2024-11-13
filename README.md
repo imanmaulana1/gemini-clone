@@ -7,6 +7,9 @@ A clone of the [Gemini AI](https://gemini.google.com/app) platform built using R
 
 [https://gemini-web-clone.netlify.app/](https://gemini-web-clone.netlify.app/)
 
+## Screenshot
+<img src="https://i.ibb.co.com/64z3JJR/Frame-3.png" alt="Frame-3" border="0">
+
 ## Table of Contents
 
 - [About](#about)
